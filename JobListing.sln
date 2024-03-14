@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JobListing", "JobListing\JobListing.csproj", "{87DB704D-7A7A-41E3-9E5D-B2FFC20D9A65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobListing.Infrastructure", "Infrastructure\JobListing.Infrastructure.csproj", "{3DC480E8-DC1B-46F7-93ED-D923B4D762C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobListing.Infrastructure", "JobListing.Infrastructure\JobListing.Infrastructure.csproj", "{3DC480E8-DC1B-46F7-93ED-D923B4D762C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobListing.Core", "JobListing.Core\JobListing.Core.csproj", "{E573B1AF-FB97-4B11-A4C2-E79639093C1F}"
 EndProject

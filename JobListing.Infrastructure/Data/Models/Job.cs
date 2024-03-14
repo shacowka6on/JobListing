@@ -1,14 +1,8 @@
 ﻿using JobListing.Infrastructure.Data.Enums;
-using JobListing.Infrastructure.Data.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace JobListing.Infrastructure.Models
+namespace JobListing.Infrastructure.Data.Models
 {
     public class Job
     {
