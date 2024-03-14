@@ -19,10 +19,8 @@ namespace JobListing.Infrastructure.Data.Models
         public int CompanyId { get; set; }
         [ForeignKey(nameof(CompanyId))]
         public Company Company { get; set; } = null!;
-
         [Required]
-        public int CategoryId { get; set; }
-        [ForeignKey(nameof(CategoryId))]
-        public Category Category { get; set; } = null!;
+        public bool IsOpen { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }
