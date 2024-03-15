@@ -21,10 +21,11 @@ namespace JobListing.Infrastructure.Data
 
             base.OnModelCreating(builder);
         }
-        DbSet<Application> Applications { get; set; } = null!;
-        DbSet<Category> Categories { get; set; } = null!;
-        DbSet<Company> Companies { get; set; } = null!;
-        DbSet<Job> Jobs { get; set; } = null!;
-        DbSet<Employer> Employers = null!;
+        public DbSet<Application> Applications { get; set; } = null!;
+        public DbSet<Category> Categories { get; set; } = null!;
+        public DbSet<Company> Companies { get; set; } = null!;
+        public DbSet<Job> Jobs { get; set; } = null!;
+
+        public DbSet<Employer> Employers = null!;
     }
 }
