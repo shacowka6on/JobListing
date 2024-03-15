@@ -15,5 +15,7 @@ namespace JobListing.Infrastructure.Data.Models
         public CompanySizeEnum Size { get; set; }
         public ICollection<Job> JobOffers { get; set; }
             = new List<Job>();
+        public ICollection<Employer> Employers { get; set; }
+            = new List<Employer>();
     }
 }
