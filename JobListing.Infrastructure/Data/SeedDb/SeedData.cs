@@ -1,6 +1,7 @@
 ﻿using JobListing.Infrastructure.Data.Enums;
 using JobListing.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace JobListing.Infrastructure.Data.SeedDb
 {
@@ -22,18 +23,22 @@ namespace JobListing.Infrastructure.Data.SeedDb
 
         public SeedData()
         {
-            SeedApplications();
+            SeedUsers();
+            SeedEmployer();
             SeedCompanies();
             SeedJobs();
-            SeedEmployer();
-            SeedUsers();
+            SeedApplications();
+        }
+        private void SeedCategories()
+        {
+
         }
         private void SeedUsers()
         {
             var hasher = new PasswordHasher<IdentityUser>();
 
             EmployerUser = new IdentityUser()
-            { 
+            {
                 Id = "dea12856-c198-4129-b3f3-b893d8395082",
                 UserName = "employer@gmail.com",
                 NormalizedUserName = "employer@gmail.com",
@@ -71,6 +76,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Description = "We are looking for a frontend developer with experience in HTML, CSS, and JavaScript.",
                 Roles = Enums.RolesEnum.Frontend,
                 Location = "Gorna Malina",
+                CompanyId = 1,
                 IsOpen = true,
                 CreatedOn = DateTime.Now.AddDays(-5),
             };
@@ -81,8 +87,21 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Description = "We are hiring a backend developer proficient in C# and .NET Core.",
                 Roles = Enums.RolesEnum.Backend,
                 Location = "Sofia",
+                CompanyId = 2,
                 IsOpen = true,
                 CreatedOn = DateTime.Now.AddDays(-2),
+            };
+            Job3 = new Job
+            {
+
+                Title = "Full-stack Developer",
+                Description = "We are seeking a full-stack developer with experience in both frontend and backend technologies.",
+                Roles = RolesEnum.Fullstack,
+                Location = "Plovdiv",
+                CompanyId = ThirdCompany.Id,
+                IsOpen = true,
+                CreatedOn = DateTime.UtcNow
+
             };
 
         }

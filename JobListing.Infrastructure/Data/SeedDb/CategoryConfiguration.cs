@@ -8,7 +8,9 @@ namespace JobListing.Infrastructure.Data.SeedDb
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            throw new NotImplementedException();
+            var data = new SeedData();
+
+            builder.HasData(new Category[] { data.Category });
         }
     }
 }
