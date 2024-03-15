@@ -1,4 +1,5 @@
-﻿using JobListing.Infrastructure.Data.Models;
+﻿using JobListing.Infrastructure.Data.Enums;
+using JobListing.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace JobListing.Infrastructure.Data.SeedDb
@@ -126,7 +127,16 @@ namespace JobListing.Infrastructure.Data.SeedDb
         }
         private void SeedApplications()
         {
-
+            Application = new Application()
+            {
+                Id = 1,
+                FirstName = "John",
+                LastName = "Doe",
+                Email = "john.doe@example.com",
+                Phonenumber = "+123456789",
+                Resume = "Lorem ipsum...",
+                Status = ApplicationStatus.Pending,
+            };
         }
     }
 }
