@@ -8,7 +8,9 @@ namespace JobListing.Infrastructure.Data.SeedDb
     {
         public void Configure(EntityTypeBuilder<Application> builder)
         {
-            throw new NotImplementedException();
+            var data = new SeedData();
+
+            builder.HasData(new Application[] { data.Application });
         }
     }
 }

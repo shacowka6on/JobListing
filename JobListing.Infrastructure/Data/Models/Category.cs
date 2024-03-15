@@ -1,12 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using JobListing.Infrastructure.Data.Enums;
 
 namespace JobListing.Infrastructure.Data.Models
 {
     public class Category
     {
         public int Id { get; set; }
-        [Required]
-        public string Name { get; set; } = string.Empty;
-        
+        public RolesEnum CategoryName { get; set; }
     }
 }

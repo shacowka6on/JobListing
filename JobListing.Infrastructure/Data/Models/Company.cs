@@ -13,5 +13,7 @@ namespace JobListing.Infrastructure.Data.Models
         [Required]
         public string Website { get; set; } = string.Empty;
         public CompanySizeEnum Size { get; set; }
+        public ICollection<Job> JobOffers { get; set; }
+            = new List<Job>();
     }
 }
