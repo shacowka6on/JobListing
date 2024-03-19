@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Infrastructure\JobListing.Infrastructure.csproj" />
     <ProjectReference Include="..\JobListing.Core\JobListing.Core.csproj" />
   </ItemGroup>
 

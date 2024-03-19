@@ -9,6 +9,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
     {
         public IdentityUser EmployerUser { get; set; } = null!;
         public IdentityUser GuestUser { get; set; } = null!;
+
         public Employer Employer { get; set; } = null!;
 
         public Application Application { get; set; } = null!;
