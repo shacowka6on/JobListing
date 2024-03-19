@@ -14,7 +14,6 @@ namespace JobListing.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new ApplicationConfiguration());
-            builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new CompanyConfiguration());
             builder.ApplyConfiguration(new JobConfiguration());
             builder.ApplyConfiguration(new EmployerConfiguration());

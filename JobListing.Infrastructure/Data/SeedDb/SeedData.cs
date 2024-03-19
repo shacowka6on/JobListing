@@ -29,10 +29,6 @@ namespace JobListing.Infrastructure.Data.SeedDb
             SeedJobs();
             SeedApplications();
         }
-        private void SeedCategories()
-        {
-
-        }
         private void SeedUsers()
         {
             var hasher = new PasswordHasher<IdentityUser>();
