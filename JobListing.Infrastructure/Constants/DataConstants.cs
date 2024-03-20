@@ -10,8 +10,8 @@
 
         public const int PhonenumberMaxLength = 15;
 
-        public const int CompanyNameMaxLength = 20;
-        public const int CompanyWebsiteMaxLength = 40;
+        public const int CompanyNameMaxLength = 100;
+        public const int CompanyWebsiteMaxLength = 120;
         
         public const int LocationMaxLength = 100;
 

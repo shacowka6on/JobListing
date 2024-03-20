@@ -10,8 +10,6 @@ namespace JobListing.Infrastructure.Data.SeedDb
         public IdentityUser EmployerUser { get; set; } = null!;
         public IdentityUser GuestUser { get; set; } = null!;
 
-        public Employer Employer { get; set; } = null!;
-
         public Application Application { get; set; } = null!;
 
         public Company FirstCompany { get; set; } = null!;
@@ -24,25 +22,14 @@ namespace JobListing.Infrastructure.Data.SeedDb
 
         public SeedData()
         {
-            SeedUsers();
-            SeedEmployer();
             SeedCompanies();
+            SeedUsers();
             SeedJobs();
             SeedApplications();
         }
         private void SeedUsers()
         {
             var hasher = new PasswordHasher<IdentityUser>();
-
-            EmployerUser = new IdentityUser()
-            {
-                Id = "dea12856-c198-4129-b3f3-b893d8395082",
-                UserName = "employer@gmail.com",
-                NormalizedUserName = "employer@gmail.com",
-                Email = "employer@gmail.com",
-                NormalizedEmail = "employer@gmail.com"
-            };
-            EmployerUser.PasswordHash = hasher.HashPassword(EmployerUser, "qwerty123");
 
             GuestUser = new IdentityUser()
             {
@@ -55,20 +42,11 @@ namespace JobListing.Infrastructure.Data.SeedDb
             GuestUser.PasswordHash = hasher.HashPassword(GuestUser, "guest123");
 
         }
-        private void SeedEmployer()
-        {
-            Employer = new Employer()
-            {
-                Id = 1,
-                Phonenumber = "+3591231239",
-                UserId = EmployerUser.Id,
-                CompanyId = 1,
-            };
-        }
         private void SeedJobs()
         {
             Job1 = new Job
             {
+                Id = 1,
                 Title = "Frontend Developer",
                 Description = "We are looking for a frontend developer with experience in HTML, CSS, and JavaScript.",
                 Roles = Enums.RolesEnum.Frontend,
@@ -79,7 +57,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
             };
             Job2 = new Job
             {
-
+                Id = 2,
                 Title = "Backend Developer",
                 Description = "We are hiring a backend developer proficient in C# and .NET Core.",
                 Roles = Enums.RolesEnum.Backend,
@@ -90,15 +68,14 @@ namespace JobListing.Infrastructure.Data.SeedDb
             };
             Job3 = new Job
             {
-
+                Id = 3,
                 Title = "Full-stack Developer",
                 Description = "We are seeking a full-stack developer with experience in both frontend and backend technologies.",
                 Roles = RolesEnum.Fullstack,
                 Location = "Plovdiv",
                 CompanyId = ThirdCompany.Id,
                 IsOpen = true,
-                CreatedOn = DateTime.UtcNow
-
+                CreatedOn = DateTime.Now.AddHours(-6),
             };
 
         }
@@ -111,10 +88,6 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Location = "Centura Gorna Malina",
                 Website = "http://firstcompanytech.com",
                 Size = Enums.CompanySizeEnum.Small,
-                JobOffers = new List<Job>
-                {
-                    Job1,
-                }
             };
             SecondCompany = new Company()
             {
@@ -123,10 +96,6 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Location = "Sofia",
                 Website = "http://secondcompanysolutions.com",
                 Size = Enums.CompanySizeEnum.Medium,
-                JobOffers = new List<Job>
-                {
-                    Job2,
-                }
             };
             ThirdCompany = new Company()
             {
@@ -135,10 +104,6 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Location = "Plovdiv",
                 Website = "http://thirdcompanyinnovations.com",
                 Size = Enums.CompanySizeEnum.Large,
-                JobOffers = new List<Job>
-                {
-                    Job3,
-                }
             };
         }
         private void SeedApplications()
@@ -149,7 +114,6 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 FirstName = "John",
                 LastName = "Doe",
                 Email = "john.doe@example.com",
-                Phonenumber = "+123456789",
                 Resume = "Lorem ipsum...",
                 Status = ApplicationStatus.Pending,
             };

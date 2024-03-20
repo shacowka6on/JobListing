@@ -16,7 +16,6 @@ namespace JobListing.Infrastructure.Data
             builder.ApplyConfiguration(new ApplicationConfiguration());
             builder.ApplyConfiguration(new CompanyConfiguration());
             builder.ApplyConfiguration(new JobConfiguration());
-            builder.ApplyConfiguration(new EmployerConfiguration());
 
             base.OnModelCreating(builder);
         }
@@ -24,7 +23,5 @@ namespace JobListing.Infrastructure.Data
         public DbSet<Category> Categories { get; set; } = null!;
         public DbSet<Company> Companies { get; set; } = null!;
         public DbSet<Job> Jobs { get; set; } = null!;
-
-        public DbSet<Employer> Employers = null!;
     }
 }
