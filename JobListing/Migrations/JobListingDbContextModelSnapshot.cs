@@ -53,7 +53,7 @@ namespace JobListing.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Applications");
+                    b.ToTable("Applications", (string)null);
 
                     b.HasData(
                         new
@@ -93,7 +93,7 @@ namespace JobListing.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("JobListing.Infrastructure.Data.Models.Company", b =>
@@ -124,7 +124,7 @@ namespace JobListing.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Companies", (string)null);
 
                     b.HasData(
                         new
@@ -192,7 +192,7 @@ namespace JobListing.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("Jobs");
+                    b.ToTable("Jobs", (string)null);
 
                     b.HasData(
                         new

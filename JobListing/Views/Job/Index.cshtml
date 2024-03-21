@@ -1,0 +1,18 @@
+﻿@using JobListing.Models.Job
+@model IEnumerable<JobViewModel>
+@{
+    ViewBag.Title = "All Jobs";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<p>
+    @foreach(var job in Model)
+    {
+        <div>
+            <h3>@job.Title</h3>
+            <p>Location: @job.Location</p>
+        </div>
+        <hr />
+    }
+</p>

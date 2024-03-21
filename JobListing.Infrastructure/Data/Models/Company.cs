@@ -11,6 +11,12 @@ namespace JobListing.Infrastructure.Data.Models
         [MaxLength(CompanyNameMaxLength)]
         public string CompanyName { get; set; } = string.Empty;
         [Required]
+        [MaxLength(CompanyDescriptionMaxLength)]
+        public string CompanyDescription { get; set; } = string.Empty;
+        [Required]
+        [MaxLength(CompanyCardDescriptionMaxLength)]
+        public string CompanyCardDescription { get; set; } = string.Empty;
+        [Required]
         [MaxLength(LocationMaxLength)]
         public string Location {  get; set; } = string.Empty;
         [Required]

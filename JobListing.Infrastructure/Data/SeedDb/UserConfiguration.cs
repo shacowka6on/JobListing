@@ -9,7 +9,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
         public void Configure(EntityTypeBuilder<IdentityUser> builder)
         {
             var data = new SeedData();
-            builder.HasData(new IdentityUser[] { data.EmployerUser, data.GuestUser});
+            builder.HasData(new IdentityUser[] { data.GuestUser});
         }
     }
 }
