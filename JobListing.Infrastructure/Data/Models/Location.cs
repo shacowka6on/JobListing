@@ -8,6 +8,6 @@ namespace JobListing.Infrastructure.Data.Models
 {
     public class Location
     {
-
+        
     }
 }

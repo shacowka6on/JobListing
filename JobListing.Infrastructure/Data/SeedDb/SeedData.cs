@@ -22,11 +22,13 @@ namespace JobListing.Infrastructure.Data.SeedDb
 
         public SeedData()
         {
-            SeedCompanies();
             SeedUsers();
+            SeedCompanies();
             SeedJobs();
+            CompanyJobConnection();
             SeedApplications();
         }
+
         private void SeedUsers()
         {
             var hasher = new PasswordHasher<IdentityUser>();
@@ -42,6 +44,12 @@ namespace JobListing.Infrastructure.Data.SeedDb
             GuestUser.PasswordHash = hasher.HashPassword(GuestUser, "guest123");
 
         }
+        private void CompanyJobConnection()
+        {
+            Job1.CompanyId = FirstCompany.Id;
+            Job2.CompanyId = FirstCompany.Id;
+            Job3.CompanyId = FirstCompany.Id;
+        }
         private void SeedJobs()
         {
             Job1 = new Job
@@ -51,7 +59,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Description = "We are looking for a frontend developer with experience in HTML, CSS, and JavaScript.",
                 Roles = Enums.RolesEnum.Frontend,
                 Location = "Gorna Malina",
-                CompanyId = 1,
+                CompanyId = FirstCompany.Id,
                 IsOpen = true,
                 CreatedOn = DateTime.Now.AddDays(-5),
             };
@@ -62,7 +70,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Description = "We are hiring a backend developer proficient in C# and .NET Core.",
                 Roles = Enums.RolesEnum.Backend,
                 Location = "Sofia",
-                CompanyId = 2,
+                CompanyId = FirstCompany.Id,
                 IsOpen = true,
                 CreatedOn = DateTime.Now.AddDays(-2),
             };
@@ -73,7 +81,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
                 Description = "We are seeking a full-stack developer with experience in both frontend and backend technologies.",
                 Roles = RolesEnum.Fullstack,
                 Location = "Plovdiv",
-                CompanyId = ThirdCompany.Id,
+                CompanyId = FirstCompany.Id,
                 IsOpen = true,
                 CreatedOn = DateTime.Now.AddHours(-6),
             };
@@ -85,6 +93,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
             {
                 Id = 1,
                 CompanyName = "First Company Tech",
+                CompanyCardDescription = "We are the FirstCompanyTech. We specialize in techy stuff",
                 Location = "Centura Gorna Malina",
                 Website = "http://firstcompanytech.com",
                 Size = Enums.CompanySizeEnum.Small,
@@ -93,6 +102,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
             {
                 Id = 2,
                 CompanyName = "Second Company Solutions",
+                CompanyCardDescription = "We are the SecondCompanySolutions. We specialize in techy stuff solutions",
                 Location = "Sofia",
                 Website = "http://secondcompanysolutions.com",
                 Size = Enums.CompanySizeEnum.Medium,
@@ -101,6 +111,7 @@ namespace JobListing.Infrastructure.Data.SeedDb
             {
                 Id = 3,
                 CompanyName = "Third Company Innovations",
+                CompanyCardDescription = "We are the ThirdCompanyInnovations. We specialize in inovating techy stuff",
                 Location = "Plovdiv",
                 Website = "http://thirdcompanyinnovations.com",
                 Size = Enums.CompanySizeEnum.Large,

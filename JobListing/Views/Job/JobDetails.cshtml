@@ -1,0 +1,17 @@
+﻿@model JobDetailsViewModel
+@{
+    ViewBag.Title = "Job Details";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<div>
+    <h1>@Model.Title</h1>
+    <p>@Model.Description</p>
+    <h3>@Model.Roles</h3>
+</div>
+<div>
+    <h4>About the company</h4>
+    <p>@Model.Company.CompanyCardDescription</p>
+    <p>@Model.Company.Website</p>
+</div>

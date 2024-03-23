@@ -28,10 +28,9 @@ namespace JobListing.Infrastructure.Data.Models
         public bool IsOpen { get; set; }
         [DisplayFormat(DataFormatString = JobDateTimeFormat)]
         public DateTime CreatedOn { get; set; }
-
-        [Required]
-        public int CategoryId { get; set; }
-        [ForeignKey(nameof(CategoryId))]
-        public Category Category { get; set; } = null!;
+        //[Required]
+        //public int CategoryId { get; set; }
+        //[ForeignKey(nameof(CategoryId))]
+        //public Category Category { get; set; } = null!;
     }
 }

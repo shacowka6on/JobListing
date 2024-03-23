@@ -20,8 +20,8 @@ namespace JobListing.Infrastructure.Data
             base.OnModelCreating(builder);
         }
         public DbSet<Application> Applications { get; set; } = null!;
-        public DbSet<Category> Categories { get; set; } = null!;
         public DbSet<Company> Companies { get; set; } = null!;
         public DbSet<Job> Jobs { get; set; } = null!;
+        //public DbSet<Category> Categories { get; set; } = null!;
     }
 }

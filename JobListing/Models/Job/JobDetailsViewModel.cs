@@ -16,7 +16,5 @@ namespace JobListing.Models.Job
         public Company Company { get; set; } = null!;
         public bool IsOpen { get; set; }
         public DateTime CreatedOn { get; set; }
-        public int CategoryId { get; set; }
-        public Category Category { get; set; } = null!;
     }
 }

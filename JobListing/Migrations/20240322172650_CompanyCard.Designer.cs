@@ -4,6 +4,7 @@ using JobListing.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobListing.Migrations
 {
     [DbContext(typeof(JobListingDbContext))]
-    partial class JobListingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240322172650_CompanyCard")]
+    partial class CompanyCard
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -186,7 +188,7 @@ namespace JobListing.Migrations
                         {
                             Id = 1,
                             CompanyId = 1,
-                            CreatedOn = new DateTime(2024, 3, 18, 15, 44, 40, 680, DateTimeKind.Local).AddTicks(3152),
+                            CreatedOn = new DateTime(2024, 3, 17, 19, 26, 49, 948, DateTimeKind.Local).AddTicks(7315),
                             Description = "We are looking for a frontend developer with experience in HTML, CSS, and JavaScript.",
                             IsOpen = true,
                             Location = "Gorna Malina",
@@ -196,8 +198,8 @@ namespace JobListing.Migrations
                         new
                         {
                             Id = 2,
-                            CompanyId = 1,
-                            CreatedOn = new DateTime(2024, 3, 21, 15, 44, 40, 680, DateTimeKind.Local).AddTicks(3164),
+                            CompanyId = 2,
+                            CreatedOn = new DateTime(2024, 3, 20, 19, 26, 49, 948, DateTimeKind.Local).AddTicks(7321),
                             Description = "We are hiring a backend developer proficient in C# and .NET Core.",
                             IsOpen = true,
                             Location = "Sofia",
@@ -207,8 +209,8 @@ namespace JobListing.Migrations
                         new
                         {
                             Id = 3,
-                            CompanyId = 1,
-                            CreatedOn = new DateTime(2024, 3, 23, 9, 44, 40, 680, DateTimeKind.Local).AddTicks(3168),
+                            CompanyId = 3,
+                            CreatedOn = new DateTime(2024, 3, 22, 13, 26, 49, 948, DateTimeKind.Local).AddTicks(7324),
                             Description = "We are seeking a full-stack developer with experience in both frontend and backend technologies.",
                             IsOpen = true,
                             Location = "Plovdiv",

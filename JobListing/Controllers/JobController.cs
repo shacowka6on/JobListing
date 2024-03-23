@@ -32,15 +32,29 @@ namespace JobListing.Controllers
         }
         public async Task<IActionResult> JobDetails(int id)
         {
-            var job = await data.Jobs.FirstOrDefaultAsync(j => j.Id == id);
+            var job = await data
+                .Jobs
+                .Include(j => j.Company)
+                .FirstOrDefaultAsync(j => j.Id == id);
 
             if (job == null)
             {
                 return NotFound();
             }
-            
-            var model = new JobDetailsViewModel
-            return View(job);
+
+            var model = new JobDetailsViewModel()
+            {
+                Id = job.Id,
+                Title = job.Title,
+                Description = job.Description,
+                CompanyId = job.CompanyId,
+                Company = job.Company,
+                Location = job.Location,
+                IsOpen = job.IsOpen,
+                Roles = job.Roles,
+                CreatedOn = job.CreatedOn,
+            };
+            return View(model);
         }
     }
 }

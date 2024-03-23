@@ -9,11 +9,9 @@ namespace JobListing.Infrastructure.Data.SeedDb
     {
         public void Configure(EntityTypeBuilder<Job> builder)
         {
-            builder
-                .HasOne(j => j.Category)
-                .WithMany()
-                .HasForeignKey(j => j.CategoryId)
-                .OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(j => j.Company)
+               .WithMany(c => c.JobOffers)
+               .HasForeignKey(j => j.CompanyId);
 
             var data = new SeedData();
             builder.HasData(new Job[] { data.Job1, data.Job2, data.Job3 });
